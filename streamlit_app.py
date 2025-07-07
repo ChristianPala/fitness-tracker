@@ -88,14 +88,14 @@ if not df.empty:
                                (df['Esercizio'] == row['Esercizio']) & (df['Peso'] == row['Peso']) & 
                                (df['Note'] == row['Note'])][0]
                 st.session_state.edit_index = idx
-                st.experimental_rerun()
+                st.rerun()
         with col2:
             if st.button("Elimina", key=f"delete_{i}"):
                 idx = df.index[(df['Data'] == row['Data']) & (df['Giorno'] == row['Giorno']) & 
                                (df['Esercizio'] == row['Esercizio']) & (df['Peso'] == row['Peso']) & 
                                (df['Note'] == row['Note'])][0]
                 st.session_state.workouts.pop(idx)
-                st.experimental_rerun()
+                st.rerun()
 else:
     st.info("Nessuna sessione ancora.")
 
